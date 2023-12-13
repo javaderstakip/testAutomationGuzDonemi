@@ -52,3 +52,35 @@ public class Main {
         System.out.println("Hello world!");
     }
 }
+
+//burdan aşağısı cucumber feature dosyası
+Feature: Login Feature
+  In this test I am testing login
+
+  Scenario: Valid username and valid password test
+    Given User is on login page
+    When User enters valid user
+    And User enters valid user password
+    And User click login button
+    Then User should login to system
+
+  Scenario: Valid username and invalid password test
+    Given User is on login page
+    When User enters valid user
+    And User enters invalid user password
+    And User click login button
+    Then User should not login to system
+
+  Scenario: Invalid username and valid password test
+    Given User is on login page
+    When User enters invalid user
+    And User enters valid user password
+    And User click login button
+    Then User should not login to system
+
+  Scenario: Invalid username and invalid password test
+    Given User is on login page
+    When User enters invalid user
+    And User enters invalid user password
+    And User click login button
+    Then User should not login to system
